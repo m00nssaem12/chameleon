@@ -4,17 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <title>카멜레온</title>
+<meta name="color-scheme" content="light only">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- 글꼴은 페이지를 막지 않게 따로 불러옴. 못 불러와도 기기 기본 한글 글꼴로 보임 -->
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet" media="print" onload="this.media='all'">
 <style>
-:root{
+:root{--fun:'Jua','Pretendard Variable',Pretendard,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;--ui:'Pretendard Variable',Pretendard,'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕','Noto Sans KR','Noto Sans CJK KR','Nanum Gothic',system-ui,sans-serif;--title:'Do Hyeon','Jua','Apple SD Gothic Neo','Malgun Gothic','맑은 고딕','Noto Sans KR','Noto Sans CJK KR','Nanum Gothic',system-ui,sans-serif;
   --felt1:#1f7a63;--felt2:#0b3730;--ink:#1f2433;--paper:#fffaf0;
   --yellow:#ffc928;--blue:#2f7fe0;--green:#22a45d;--red:#ff5a4e;--orange:#ff8a2a;
   --shadow:0 6px 0 rgba(0,0,0,.28),0 12px 26px rgba(0,0,0,.25);
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;min-height:100%}
-body{font-family:'Jua',system-ui,sans-serif;color:var(--ink);background:radial-gradient(ellipse at 50% 15%,var(--felt1),var(--felt2) 78%) fixed;background-color:var(--felt2)}
+body{font-family:var(--ui);-webkit-text-size-adjust:100%;color:var(--ink);background:radial-gradient(ellipse at 50% 15%,var(--felt1),var(--felt2) 78%) fixed;background-color:var(--felt2)}
 body::before{content:'';position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1.6px);background-size:14px 14px;z-index:0}
 #app{max-width:1000px;margin:0 auto;padding:12px 16px 48px;position:relative;z-index:1}
 h2,h3{margin:.2em 0 .5em;font-weight:normal}
@@ -40,13 +44,13 @@ label{display:block;margin:10px 0 4px;font-size:15px}
 .panel{background:var(--paper);border-radius:22px;padding:18px;box-shadow:var(--shadow);border:4px solid var(--ink)}
 .narrow{max-width:520px;margin:0 auto}
 .topbar{display:flex;align-items:center;gap:8px;margin-bottom:8px;color:#fff}
-.topbar .grow{flex:1;text-align:center;font-family:'Do Hyeon';font-size:20px;letter-spacing:1px}
+.topbar .grow{flex:1;text-align:center;font-family:var(--title);font-size:20px;letter-spacing:1px}
 .deckbadge{border:3px solid var(--ink);border-radius:999px;padding:3px 12px;font-size:14px;color:#fff}
 .deckbadge.blue{background:var(--blue)} .deckbadge.green{background:var(--green)}
 
 /* home */
 .home{text-align:center;padding-top:18px}
-.logo{font-family:'Do Hyeon';font-weight:normal;font-size:clamp(60px,16vw,100px);margin:0;line-height:1.05;letter-spacing:4px}
+.logo{font-family:var(--title);font-weight:normal;font-size:clamp(60px,16vw,100px);margin:0;line-height:1.05;letter-spacing:4px}
 .logo span{display:inline-block;text-shadow:0 0 0 #1f2433,3px 3px 0 #1f2433,-2px -2px 0 #1f2433,2px -2px 0 #1f2433,-2px 2px 0 #1f2433,0 6px 0 #1f2433;animation:hop 2.8s ease-in-out infinite}
 .logo span:nth-child(1){color:#ffc928}.logo span:nth-child(2){color:#8ee86a;animation-delay:.15s}.logo span:nth-child(3){color:#5ec8ff;animation-delay:.3s}.logo span:nth-child(4){color:#ff8f7a;animation-delay:.45s}
 @keyframes hop{0%,70%,100%{transform:none}80%{transform:translateY(-8px)}}
@@ -66,7 +70,7 @@ label{display:block;margin:10px 0 4px;font-size:15px}
 .opt input{width:22px;height:22px;flex:none;margin-top:1px}
 .or{text-align:center;margin:14px 0 6px;color:#8a8f9c}
 .roomcode{text-align:center;font-size:18px}
-.roomcode b{display:block;font-family:'Do Hyeon';font-size:54px;letter-spacing:8px;color:var(--blue)}
+.roomcode b{display:block;font-family:var(--title);font-size:54px;letter-spacing:8px;color:var(--blue)}
 .plist{list-style:none;padding:0;margin:0 0 10px}
 .plist li{display:flex;align-items:center;gap:8px;padding:8px 10px;border:3px solid var(--ink);border-radius:12px;margin-bottom:6px;background:#fff}
 .plist li span{flex:1}
@@ -95,9 +99,9 @@ label{display:block;margin:10px 0 4px;font-size:15px}
 .topic{--tc:#ff5a4e;background:var(--tc);border:4px solid var(--ink);border-radius:22px;padding:10px 10px 12px;box-shadow:var(--shadow);width:100%;animation:flipIn .5s}
 .topic-head{text-align:center;color:#fff;padding:2px 0 8px}
 .topic-head small{display:block;font-size:12px;letter-spacing:3px;opacity:.85}
-.topic-head b{font-family:'Do Hyeon';font-weight:normal;font-size:28px;text-shadow:0 3px 0 rgba(0,0,0,.28)}
+.topic-head b{font-family:var(--title);font-weight:normal;font-size:28px;text-shadow:0 3px 0 rgba(0,0,0,.28)}
 .tgrid{display:grid;grid-template-columns:24px repeat(4,1fr);gap:5px}
-.colh,.rowh{display:flex;align-items:center;justify-content:center;font-family:'Do Hyeon';color:#fff;font-size:17px}
+.colh,.rowh{display:flex;align-items:center;justify-content:center;font-family:var(--title);color:#fff;font-size:17px}
 .colh span{background:var(--ink);border-radius:50%;width:28px;height:28px;display:grid;place-items:center}
 .cell{background:var(--paper);border:3px solid var(--ink);border-radius:11px;min-height:56px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:clamp(13px,3.6vw,17px);padding:4px 3px;word-break:keep-all;line-height:1.15;transition:background .15s}
 .cell.secret{background:var(--yellow);transform:scale(1.06);box-shadow:0 0 0 4px #fff;animation:pulse 1.2s ease-in-out infinite}
@@ -107,7 +111,7 @@ label{display:block;margin:10px 0 4px;font-size:15px}
 .cell.wrong{text-decoration:line-through;opacity:.45}
 .topic.back{display:grid;place-items:center;min-height:320px;background:repeating-linear-gradient(45deg,rgba(255,255,255,.08) 0 12px,transparent 12px 24px),var(--tc,#3c4458)}
 .tb-in{text-align:center;color:#fff}
-.tb-in .tb-title{font-family:'Do Hyeon';font-size:30px;text-shadow:0 3px 0 rgba(0,0,0,.3)}
+.tb-in .tb-title{font-family:var(--title);font-size:30px;text-shadow:0 3px 0 rgba(0,0,0,.3)}
 @keyframes flipIn{from{transform:perspective(900px) rotateY(80deg);opacity:.2}to{transform:none;opacity:1}}
 
 /* dice */
@@ -120,8 +124,8 @@ label{display:block;margin:10px 0 4px;font-size:15px}
 /* code card */
 .codecard{--dc:var(--blue);background:var(--dc);border:4px solid var(--ink);border-radius:18px;padding:10px;color:#fff;box-shadow:var(--shadow);width:100%;max-width:400px}
 .codecard.green{--dc:var(--green)}
-.cc-title{font-family:'Do Hyeon';text-align:center;font-size:20px;margin-bottom:6px;letter-spacing:2px}
-.cc-title small{font-family:'Jua';font-size:13px;letter-spacing:0;opacity:.85}
+.cc-title{font-family:var(--title);text-align:center;font-size:20px;margin-bottom:6px;letter-spacing:2px}
+.cc-title small{font-family:var(--ui);font-size:13px;letter-spacing:0;opacity:.85}
 .ctab{display:grid;grid-template-columns:26px repeat(8,1fr);gap:3px}
 .ctab div{background:#fff;color:var(--ink);border-radius:6px;font-size:13px;text-align:center;padding:4px 0;line-height:1.1}
 .ctab .hd{background:transparent;display:grid;place-items:center;padding:1px 0;border-radius:6px}
@@ -133,7 +137,7 @@ label{display:block;margin:10px 0 4px;font-size:15px}
 
 /* chameleon card */
 .chamcard{background:linear-gradient(135deg,#ff5a4e,#ffc928,#6ee06a,#22c3b0,#2f7fe0,#8b5cf6);border:4px solid var(--ink);border-radius:18px;padding:14px;text-align:center;color:#fff;box-shadow:var(--shadow);width:100%;max-width:400px}
-.chamcard h2{font-family:'Do Hyeon';font-size:30px;margin:4px 0;text-shadow:0 3px 0 var(--ink)}
+.chamcard h2{font-family:var(--title);font-size:30px;margin:4px 0;text-shadow:0 3px 0 var(--ink)}
 .chamcard p{background:rgba(31,36,51,.75);border-radius:12px;padding:8px;font-size:15px}
 .cardback{--dc:var(--blue);width:100%;max-width:400px;min-height:210px;border:4px solid var(--ink);border-radius:18px;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.18) 0 18%,transparent 19%) 0 0/44px 44px,var(--dc);display:grid;place-items:center;box-shadow:var(--shadow);cursor:pointer}
 .cardback.green{--dc:var(--green)}
@@ -156,11 +160,11 @@ label{display:block;margin:10px 0 4px;font-size:15px}
 .vrow{display:flex;align-items:center;gap:8px;background:#fff;border:3px solid var(--ink);border-radius:12px;padding:6px 8px;margin-bottom:6px}
 .vrow span{flex:1}
 .vrow b{min-width:28px;text-align:center;font-size:22px}
-.timer{font-family:'Do Hyeon';font-size:48px;text-align:center;color:var(--ink)}
+.timer{font-family:var(--title);font-size:48px;text-align:center;color:var(--ink)}
 .timer.end{color:var(--red)}
 .clues{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
 .clues span{background:#fff;border:2px solid var(--ink);border-radius:999px;padding:3px 10px;font-size:15px}
-.banner{text-align:center;font-family:'Do Hyeon';font-size:34px;margin:4px 0 8px}
+.banner{text-align:center;font-family:var(--title);font-size:34px;margin:4px 0 8px}
 .banner.win{color:var(--green)} .banner.lose{color:var(--red)}
 .reveal{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:8px 0}
 .mini{width:120px;height:160px;border:4px solid var(--ink);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;font-size:14px;box-shadow:0 4px 0 rgba(0,0,0,.25);animation:flipIn .6s;padding:6px}
@@ -168,7 +172,7 @@ label{display:block;margin:10px 0 4px;font-size:15px}
 .mini.cham{background:linear-gradient(135deg,#ff5a4e,#ffc928,#6ee06a,#2f7fe0,#8b5cf6)}
 .mini b{font-size:16px;text-shadow:0 2px 0 var(--ink)}
 .trophy{text-align:center;background:linear-gradient(#fff1b8,#ffc928);border:4px solid var(--ink);border-radius:18px;padding:12px;margin:10px 0}
-.trophy .t1{font-family:'Do Hyeon';font-size:30px}
+.trophy .t1{font-family:var(--title);font-size:30px}
 .vlist{font-size:14px;color:#555;text-align:center;margin:6px 0}
 
 /* modal / toast */
@@ -209,6 +213,14 @@ label{display:block;margin:10px 0 4px;font-size:15px}
 .dmark.ok{background:#3fc26b}.dmark.no{background:var(--red)}.dmark.wait{background:#f2c230}
 .modal-in code{display:block;background:#1f2433;color:#ffe89a;padding:9px;border-radius:8px;margin:6px 0;font-size:12px;text-align:left}
 .modal-in ol,.modal-in ul{text-align:left;padding-left:20px;line-height:1.6}
+/* 가독성: 본문·카드 단어는 Pretendard, 버튼·소제목만 주아체 */
+button,h2,h3,.chip,.deckbadge,.tag,.roomcode,.mini,.qchip{font-family:var(--fun)}
+b,strong{font-weight:700}
+p,li,label,.muted,.callout,.opt,.vlist,.secretline,.cmsg,.order li,.chat-empty{font-family:var(--ui);letter-spacing:-.01em}
+.cell{font-family:var(--ui);font-weight:600;letter-spacing:-.02em}
+.ctab div{font-family:var(--ui);font-weight:600}
+.callout{font-weight:600}
+.modal-in.rules li,.modal-in.rules p{font-size:15.5px;line-height:1.65}
 #modal{position:fixed;inset:0;background:rgba(10,20,18,.7);display:none;align-items:center;justify-content:center;z-index:50;padding:16px;overflow:auto}
 #modal.show{display:flex}
 .modal-in{background:var(--paper);border:4px solid var(--ink);border-radius:22px;padding:18px;max-width:460px;width:100%;box-shadow:var(--shadow);text-align:center;max-height:92vh;overflow:auto}
@@ -763,11 +775,11 @@ const PIP={tl:[27,27],tr:[73,27],ml:[27,50],mr:[73,50],c:[50,50],bl:[27,73],br:[
 const FACE={1:['c'],2:['tl','br'],3:['tl','c','br'],4:['tl','tr','bl','br'],5:['tl','tr','c','bl','br'],6:['tl','tr','ml','mr','bl','br']};
 function d6SVG(v,s=64){
   const pips=(FACE[v]||[]).map(k=>`<circle cx="${PIP[k][0]}" cy="${PIP[k][1]}" r="${s<30?11:9}" fill="#1f2433"/>`).join('');
-  return `<svg viewBox="0 0 100 100" width="${s}" height="${s}"><rect x="6" y="6" width="88" height="88" rx="20" fill="#ffc928" stroke="#1f2433" stroke-width="${s<30?9:6}"/>${pips}${v?'':'<text x="50" y="66" text-anchor="middle" font-size="46" fill="#1f2433" font-family="Do Hyeon">?</text>'}</svg>`;
+  return `<svg viewBox="0 0 100 100" width="${s}" height="${s}"><rect x="6" y="6" width="88" height="88" rx="20" fill="#ffc928" stroke="#1f2433" stroke-width="${s<30?9:6}"/>${pips}${v?'':'<text x="50" y="66" text-anchor="middle" font-size="46" fill="#1f2433" font-family="Do Hyeon, Jua, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-weight="bold">?</text>'}</svg>`;
 }
 function d8SVG(v,s=64){
   const small=s<30;
-  return `<svg viewBox="0 0 100 100" width="${s}" height="${s}"><polygon points="50,4 95,50 50,96 5,50" fill="#1d5fb8" stroke="#1f2433" stroke-width="${small?8:6}" stroke-linejoin="round"/>${small?'':'<polygon points="50,10 84,62 16,62" fill="#2f7fe0" stroke="#1f2433" stroke-width="3" stroke-linejoin="round"/>'}<text x="50" y="${small?66:52}" text-anchor="middle" font-size="${small?46:30}" fill="#fff" font-family="Do Hyeon">${v||'?'}</text></svg>`;
+  return `<svg viewBox="0 0 100 100" width="${s}" height="${s}"><polygon points="50,4 95,50 50,96 5,50" fill="#1d5fb8" stroke="#1f2433" stroke-width="${small?8:6}" stroke-linejoin="round"/>${small?'':'<polygon points="50,10 84,62 16,62" fill="#2f7fe0" stroke="#1f2433" stroke-width="3" stroke-linejoin="round"/>'}<text x="50" y="${small?66:52}" text-anchor="middle" font-size="${small?46:30}" fill="#fff" font-family="Do Hyeon, Jua, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-weight="bold">${v||'?'}</text></svg>`;
 }
 
 /* ================= 카드 컴포넌트 ================= */
@@ -983,7 +995,7 @@ function phaseHTML(G){
     if(r.type==='escaped'){title='🦎 카멜레온 탈출!';cls='lose';desc=`${nm(acc)} 님은 <b>코드 카드</b>였어요. 진짜 카멜레온은 <b>${nm(cham)}</b>! 카멜레온 +2점`}
     else if(r.type==='caught-guessed'){title='😏 잡혔지만… 탈출!';cls='lose';desc=`${nm(cham)} 님이 비밀 단어를 맞혔어요! 카멜레온 +1점`}
     else{title='🎉 카멜레온 체포!';cls='win';desc=`${nm(cham)} 님이 “${esc(G.guesses[G.guesses.length-1])}”라고 답했지만 틀렸어요. 나머지 모두 +2점`}
-    const accCard=acc===cham?`<div class="mini cham"><div class="shift">${chamSVG(90)}</div><b>${nm(acc)}</b></div>`:`<div class="mini ${G.deck}"><div style="font-family:'Do Hyeon';font-size:22px">CODE</div><b>${nm(acc)}</b><small>지목됨</small></div>${`<div class="mini cham"><div class="shift">${chamSVG(90)}</div><b>${nm(cham)}</b><small>진짜 카멜레온</small></div>`}`;
+    const accCard=acc===cham?`<div class="mini cham"><div class="shift">${chamSVG(90)}</div><b>${nm(acc)}</b></div>`:`<div class="mini ${G.deck}"><div style="font-family:var(--title);font-size:22px">CODE</div><b>${nm(acc)}</b><small>지목됨</small></div>${`<div class="mini cham"><div class="shift">${chamSVG(90)}</div><b>${nm(cham)}</b><small>진짜 카멜레온</small></div>`}`;
     let votes='';
     if(S.mode==='online'&&Object.keys(G.votes).length)votes=`<div class="vlist">투표: ${G.order.filter(p=>G.votes[p]).map(p=>`${nm(p)}→${nm(G.votes[p])}`).join(' · ')}</div>`;
     else if(G.voteTally)votes=`<div class="vlist">득표: ${G.order.filter(p=>G.voteTally[p]).map(p=>`${nm(p)} ${G.voteTally[p]}표`).join(' · ')}</div>`;
